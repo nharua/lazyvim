@@ -14,7 +14,7 @@ vim.keymap.set('i', '<S-Up>', '<Esc>:m-2<CR>', { desc = 'Move line up one row in
 vim.keymap.set('i', '<S-Down>', '<Esc>:m+<CR>', { desc = 'Move line down one row in insert mode' })
 
 -- Neotree 
-vim.keymap.set('n', '<leader>o', ':Neotree toggle<CR>')
+vim.keymap.set('n', '<leader>o', ':Neotree toggle<CR>', { desc = 'Open files'})
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
