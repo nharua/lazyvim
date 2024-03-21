@@ -45,3 +45,13 @@ vim.api.nvim_create_user_command('DiagnosticsToggle', function()
     vim.diagnostic.disable()
   end
 end, {})
+
+-- search TODO  FIXME: 
+vim.keymap.set('n', '<leader>t', ':TodoTelescope<cr>')
+
+-- Tab and Shift Tab a block
+local opts = { noremap = true, silent = true }
+vim.keymap.set("n",    "<Tab>",         ">>",  opts)
+vim.keymap.set("n",    "<S-Tab>",       "<<",  opts)
+vim.keymap.set("v",    "<Tab>",         ">gv", opts)
+vim.keymap.set("v",    "<S-Tab>",       "<gv", opts)
