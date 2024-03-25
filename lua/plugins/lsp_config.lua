@@ -29,11 +29,12 @@ return {
 		-- help communicate between nvim and language servers
 		"neovim/nvim-lspconfig",
 		config = function()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({
 				-- cmd = {...},
 				-- filetypes { ...},
-				-- capabilities = {},
+				capabilities = capabilities,
 				settings = {
 					Lua = {
 						runtime = { version = "LuaJIT" },
@@ -56,8 +57,11 @@ return {
 					},
 				},
 			})
-			lspconfig.pyright.setup({})
+			lspconfig.pyright.setup({
+				capabilities = capabilities,
+			})
 			lspconfig.verible.setup({
+				capabilities = capabilities,
 				-- cmd = { 'verible-verilog-ls', '--rules_config_search' },
 				cmd = { "verible-verilog-ls", "--rules_config", "~/.config/nvim/" },
 				root_dir = function()
@@ -78,7 +82,7 @@ return {
 					end
 					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 					map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-					map("<leader>gf", vim.lsp.buf.format, "[G]oto [F]ormatation")
+					-- map("<leader>gf", vim.lsp.buf.format, "[G]oto [F]ormatation")
 					map("K", vim.lsp.buf.hover, "Hover Documentation")
 					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 				end,
