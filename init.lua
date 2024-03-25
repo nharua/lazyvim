@@ -11,9 +11,9 @@
 --     MOST IMPORTANTLY, we provide a keymap "<space>sh" to [s]earch the [h]elp documentation,
 --       which is very useful when you're not sure exactly what you're looking for.
 
--- Load options file 
-require ("options")
+-- Load options file
+require("options")
 -- Load keymap
-require ("keymaps")
+require("keymaps")
 -- Load plugin manager "lazy"
-require ("lazy_manager")
+require("lazy_manager")
