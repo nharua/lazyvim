@@ -31,6 +31,7 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
+			-- local verible_cofig_path = vim.fn.expand("/home/$USER/.config/nvim")
 			lspconfig.lua_ls.setup({
 				-- cmd = {...},
 				-- filetypes { ...},
@@ -63,7 +64,12 @@ return {
 			lspconfig.verible.setup({
 				capabilities = capabilities,
 				-- cmd = { 'verible-verilog-ls', '--rules_config_search' },
-				cmd = { "verible-verilog-ls", "--rules_config", "~/.config/nvim/" },
+				-- cmd = { "verible-verilog-ls", "--rules_config", "/home/rua/.config/nvim/.rules.verible_lint" },
+				cmd = {
+					"verible-verilog-ls",
+					"--rules_config",
+					vim.fn.expand("/home/$USER/.config/nvim/.rules.verible_lint"),
+				},
 				root_dir = function()
 					return vim.loop.cwd()
 				end,
