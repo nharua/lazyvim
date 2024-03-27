@@ -55,3 +55,24 @@ vim.keymap.set("n", "<Tab>", ">>", opts)
 vim.keymap.set("n", "<S-Tab>", "<<", opts)
 vim.keymap.set("v", "<Tab>", ">gv", opts)
 vim.keymap.set("v", "<S-Tab>", "<gv", opts)
+
+-- Spectre
+vim.keymap.set("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', { desc = "Toggle Spectre" })
+vim.keymap.set(
+	"n",
+	"<leader>sW",
+	'<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
+	{ desc = "[S]earch/[R]eplace current word" }
+)
+vim.keymap.set(
+	"v",
+	"<leader>sW",
+	'<esc><cmd>lua require("spectre").open_visual()<CR>',
+	{ desc = "[S]earch/[R]eplace current word" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>sF",
+	'<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
+	{ desc = "[S]earch/[R]eplace on current file" }
+)

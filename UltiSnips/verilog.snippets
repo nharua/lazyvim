@@ -1,24 +1,16 @@
 snippet header "Verilog File Header"
-//==============================================================================
+///////////////////////////////////////////////////////////////////////////
+// Copyright `!v strftime("%Y")` DreamBig Semiconductor, Inc. All Rights Reserved.
 //
-// File name     : `!v expand('%:t')`
-// Author        : `!v g:snips_authorname` - `!v g:snips_authoremail`
-// Creation Date : `!v strftime("%Y-%m-%d")`
+// No portions of this material may be reproduced in any form without
+// the written permission of DreamBig Semiconductor Inc.
+// All information contained in this document is DreamBig Semiconductor Inc.
+// company confidential, proprietary and trade secret.
 //
-// Copyright `!v strftime("%Y")` DreamBig Semiconductor. All Rights Reserved.
-//
-// No portions of this meterial may be reproduced in any form without
-// the written permission of:
-//  DreamBig Semiconductor
-//  1601 McCarthy Blvd
-//  Milpitas CA - 95035
-//
-// All information contained in the document is DreamBig Semiconductor
-// company private, proprietary and trade secret.
-//
-// Description   : ${1:Description of the file}
-//
-//==============================================================================
-
+//  File name    : `!v expand('%:t')`
+/// Author       : `!v g:snips_authorname` - `!v g:snips_authoremail`
+/// Date Created : `!v strftime("%Y-%m-%d")`
+/// Description  : ${1:Detailed description of function}
+///////////////////////////////////////////////////////////////////////////
 ${2:Insert your code here}
 endsnippet
