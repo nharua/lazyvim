@@ -8,6 +8,6 @@ return {
 		vim.g.UltiSnipsEditSplit = "vertical"
 
 		-- Set the snippets directory
-		vim.g.UltiSnipsSnippetsDir = "~/.config/nvim/UltiSnips"
+		vim.g.UltiSnipsSnippetsDir = "/home/$USER/.config/nvim/UltiSnips"
 	end,
 }
