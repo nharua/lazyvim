@@ -70,4 +70,5 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 
-vim.g.snips_author = vim.fn.system("git config --global user.email")
+vim.g.snips_authoremail = vim.fn.system("git config --global user.email"):gsub("\n", "")
+vim.g.snips_authorname = vim.fn.system("git config --global user.name"):gsub("\n", "")
