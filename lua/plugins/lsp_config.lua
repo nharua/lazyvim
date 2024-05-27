@@ -60,6 +60,7 @@ return {
 			})
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
+				root_dir = lspconfig.util.root_pattern(".git", "setup.py", "setup.cfg", "requirements.txt", "Pipfile"),
 			})
 			lspconfig.verible.setup({
 				capabilities = capabilities,
